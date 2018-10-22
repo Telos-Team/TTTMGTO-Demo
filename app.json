@@ -1,7 +1,7 @@
 {
   "id": "1c2a9b78-7a1e-4d8e-aae1-8bed43b94e76",
   "name": "TTTMGTO-Demo",
-  "publisher": "Default publisher",
+  "publisher": "Telos Team",
   "brief": "",
   "description": "",
   "version": "1.0.0.0",
@@ -19,5 +19,7 @@
     "from": 67500,
     "to": 67549
   },
-  "runtime": "2.0"
+  "runtime": "2.0",
+  "target": "Extension",
+  "showMyCode": false
 }
