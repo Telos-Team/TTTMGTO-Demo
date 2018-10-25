@@ -11,6 +11,9 @@ codeunit 67504 TTTMGTOInstallAppPerDatabase
             HandleReInstall();
     end;
 
+    var
+        cuModuleInfoWrapper: Codeunit TTTMGTOModuleInfoWrapper;
+
     local procedure HandleFreshInstall()
     begin
     end;
@@ -18,7 +21,4 @@ codeunit 67504 TTTMGTOInstallAppPerDatabase
     local procedure HandleReInstall()
     begin
     end;
-
-    var
-        cuModuleInfoWrapper: Codeunit TTTMGTOModuleInfoWrapper;
 }

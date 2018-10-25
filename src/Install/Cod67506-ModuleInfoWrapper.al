@@ -2,6 +2,10 @@ codeunit 67506 TTTMGTOModuleInfoWrapper
 {
     Description = 'TTT Magento Module Info Wrapper';
 
+    var
+        miApp: ModuleInfo;
+        booModuleInfoLoaded: Boolean;
+
     procedure GetId(): Guid
     begin
         LoadModuleInfo();
@@ -100,8 +104,4 @@ codeunit 67506 TTTMGTOModuleInfoWrapper
         NavApp.GetCurrentModuleInfo(miApp);
         booModuleInfoLoaded := true;
     end;
-
-    var
-        miApp: ModuleInfo;
-        booModuleInfoLoaded: Boolean;
 }

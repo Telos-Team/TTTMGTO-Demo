@@ -6,6 +6,9 @@ codeunit 67501 TTTMGTOWSInformation
     begin
     end;
 
+    var
+        textSalesOrderFilter: Label 'SORTING(Field1,Field3) WHERE(Field1=1(1)', Locked = true;
+
     procedure GetItemCount(): Integer
     begin
         exit(GetItemCountInternal());
@@ -52,7 +55,4 @@ codeunit 67501 TTTMGTOWSInformation
             locrrTable.SetView(partxtView);
         exit(locrrTable.Count());
     end;
-
-    var
-        textSalesOrderFilter: Label 'SORTING(Field1,Field3) WHERE(Field1=1(1)', Locked = true;
 }

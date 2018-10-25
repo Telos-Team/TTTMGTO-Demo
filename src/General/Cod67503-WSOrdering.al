@@ -6,6 +6,11 @@ codeunit 67503 TTTMGTOWSOrdering
     begin
     end;
 
+    var
+        textACKTxt: Label 'OK', Locked = true;
+        errFieldLengthExceededErr: Label 'Field length exceeded!\Table: %1\Field: %2\Allowed: %3\Used: %4';
+        errFieldLengthZeroErr: Label 'Field length cannot be zero!\Table: %1\Field: %2';
+
     procedure PostOrderShipment(OrderNo: Text; LineNo: Integer): Text
     begin
         PostOrderShipmentInternal(OrderNo, LineNo);
@@ -93,9 +98,4 @@ codeunit 67503 TTTMGTOWSOrdering
                 if parintUsedLength = 0 then
                     error(errFieldLengthZeroErr, partxtTableCaption, partxtFieldCaption);
     end;
-
-    var
-        textACKTxt: Label 'OK', Locked = true;
-        errFieldLengthExceededErr: Label 'Field length exceeded!\Table: %1\Field: %2\Allowed: %3\Used: %4';
-        errFieldLengthZeroErr: Label 'Field length cannot be zero!\Table: %1\Field: %2';
 }

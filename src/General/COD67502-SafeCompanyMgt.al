@@ -7,6 +7,20 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
         Code();
     end;
 
+    var
+        txtCompanyName: Text;
+        txtSafeAction: Text;
+        textUnknownCompanyErr: Label 'Unknown company: %1';
+        textSameCompanyErr: Label 'You can not delete the active company %1. Call this function from another company.';
+        textUnknownActionErr: Label 'Unknown action: %1';
+        textMissingNameErr: Label 'Missing Name!';
+        textCronusNotAllowedErr: Label 'CRONUS not allowed in Name: %1';
+        textAlreadeyExistsErr: Label 'Company %1 already exists!';
+        textEnumDeleteCompanyLbl: Label 'DELETECOMPANY', Locked = true;
+        textEnumCreateCompanyLbl: Label 'CREATECOMPANY', Locked = true;
+        textCronusLbl: Label 'CRONUS', Locked = true;
+        textCronusSourceNameLbl: Label 'CRONUS Danmark A/S';
+
     local procedure Code()
     begin
         Case UpperCase(txtSafeAction) of
@@ -71,18 +85,4 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
     begin
         exit(textEnumCreateCompanyLbl);
     end;
-
-    var
-        txtCompanyName: Text;
-        txtSafeAction: Text;
-        textUnknownCompanyErr: Label 'Unknown company: %1';
-        textSameCompanyErr: Label 'You can not delete the active company %1. Call this function from another company.';
-        textUnknownActionErr: Label 'Unknown action: %1';
-        textMissingNameErr: Label 'Missing Name!';
-        textCronusNotAllowedErr: Label 'CRONUS not allowed in Name: %1';
-        textAlreadeyExistsErr: Label 'Company %1 already exists!';
-        textEnumDeleteCompanyLbl: Label 'DELETECOMPANY', Locked = true;
-        textEnumCreateCompanyLbl: Label 'CREATECOMPANY', Locked = true;
-        textCronusLbl: Label 'CRONUS', Locked = true;
-        textCronusSourceNameLbl: Label 'CRONUS Danmark A/S';
 }
