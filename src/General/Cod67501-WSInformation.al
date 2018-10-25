@@ -54,5 +54,5 @@ codeunit 67501 TTTMGTOWSInformation
     end;
 
     var
-        textSalesOrderFilter: Label 'SORTING(Field1,Field3) WHERE(Field1=1(1)';
+        textSalesOrderFilter: Label 'SORTING(Field1,Field3) WHERE(Field1=1(1)', Locked = true;
 }

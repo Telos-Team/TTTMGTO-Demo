@@ -81,8 +81,8 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
         textMissingNameErr: Label 'Missing Name!';
         textCronusNotAllowedErr: Label 'CRONUS not allowed in Name: %1';
         textAlreadeyExistsErr: Label 'Company %1 already exists!';
-        textEnumDeleteCompanyLbl: Label 'DELETECOMPANY';
-        textEnumCreateCompanyLbl: Label 'CREATECOMPANY';
-        textCronusLbl: Label 'CRONUS';
+        textEnumDeleteCompanyLbl: Label 'DELETECOMPANY', Locked = true;
+        textEnumCreateCompanyLbl: Label 'CREATECOMPANY', Locked = true;
+        textCronusLbl: Label 'CRONUS', Locked = true;
         textCronusSourceNameLbl: Label 'CRONUS Danmark A/S';
 }

@@ -95,7 +95,7 @@ codeunit 67503 TTTMGTOWSOrdering
     end;
 
     var
-        textACKTxt: Label 'OK';
+        textACKTxt: Label 'OK', Locked = true;
         errFieldLengthExceededErr: Label 'Field length exceeded!\Table: %1\Field: %2\Allowed: %3\Used: %4';
         errFieldLengthZeroErr: Label 'Field length cannot be zero!\Table: %1\Field: %2';
 }
