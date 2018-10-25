@@ -20,7 +20,7 @@ codeunit 67500 TTTMGTOWSManagement
     var
         loccuSafeCompMgt: Codeunit TTTMGTOSafeCompanyMgt;
     begin
-        loccuSafeCompMgt.SetSafeAction('DELETECOMPANY');
+        loccuSafeCompMgt.SetSafeAction(loccuSafeCompMgt.GetEnumDeleteCompany());
         loccuSafeCompMgt.SetCompanyName(partxtName);
         if not loccuSafeCompMgt.Run() then
             exit(GetLastErrorText());
@@ -31,7 +31,7 @@ codeunit 67500 TTTMGTOWSManagement
     var
         loccuSafeCompMgt: Codeunit TTTMGTOSafeCompanyMgt;
     begin
-        loccuSafeCompMgt.SetSafeAction('CREATECOMPANY');
+        loccuSafeCompMgt.SetSafeAction(loccuSafeCompMgt.GetEnumCreateCompany());
         loccuSafeCompMgt.SetCompanyName(partxtName);
         if not loccuSafeCompMgt.Run() then
             exit(GetLastErrorText());

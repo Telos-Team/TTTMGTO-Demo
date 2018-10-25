@@ -10,11 +10,11 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
     local procedure Code()
     begin
         Case UpperCase(txtSafeAction) of
-            'DELETECOMPANY':
+            textEnumDeleteCompanyLbl:
                 begin
                     DeleteCompany(txtCompanyName);
                 end;
-            'CREATECOMPANY':
+            textEnumCreateCompanyLbl:
                 begin
                     CreateCompany(txtCompanyName);
                 end;
@@ -37,7 +37,7 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
     var
         locrecComp: Record Company;
     begin
-        if StrPos(UpperCase(partxtName), 'CRONUS') > 0 then
+        if StrPos(UpperCase(partxtName), textCronusLbl) > 0 then
             Error(textUnknownCompanyErr, partxtName);
         if not locrecComp.Get(partxtName) then
             Error(textUnknownCompanyErr, partxtName);
@@ -53,13 +53,23 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
     begin
         if partxtName = '' then
             error(textMissingNameErr);
-        if StrPos(UpperCase(partxtName), 'CRONUS') > 0 then
+        if StrPos(UpperCase(partxtName), textCronusLbl) > 0 then
             Error(textCronusNotAllowedErr, partxtName);
         if locrecComp.Get(partxtName) then
             Error(textAlreadeyExistsErr, partxtName);
-        locbooOK := CopyCompany('CRONUS Danmark A/S', partxtName);
+        locbooOK := CopyCompany(textCronusSourceNameLbl, partxtName);
         if not locbooOK then
             error(GetLastErrorText());
+    end;
+
+    procedure GetEnumDeleteCompany(): Text
+    begin
+        exit(textEnumCreateCompanyLbl);
+    end;
+
+    procedure GetEnumCreateCompany(): Text
+    begin
+        exit(textEnumCreateCompanyLbl);
     end;
 
     var
@@ -71,4 +81,8 @@ codeunit 67502 TTTMGTOSafeCompanyMgt
         textMissingNameErr: Label 'Missing Name!';
         textCronusNotAllowedErr: Label 'CRONUS not allowed in Name: %1';
         textAlreadeyExistsErr: Label 'Company %1 already exists!';
+        textEnumDeleteCompanyLbl: Label 'DELETECOMPANY';
+        textEnumCreateCompanyLbl: Label 'CREATECOMPANY';
+        textCronusLbl: Label 'CRONUS';
+        textCronusSourceNameLbl: Label 'CRONUS Danmark A/S';
 }

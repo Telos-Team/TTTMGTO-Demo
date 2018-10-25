@@ -33,7 +33,7 @@ codeunit 67501 TTTMGTOWSInformation
 
     local procedure GetOrderCountInternal(): Integer
     begin
-        exit(GetFilteredRecordCount(Database::"Sales Header", 'SORTING(Field1,Field3) WHERE(Field1=1(1)'));
+        exit(GetFilteredRecordCount(Database::"Sales Header", textSalesOrderFilter));
     end;
 
     local procedure GetRecordCount(parintTableNo: Integer): Integer
@@ -53,4 +53,6 @@ codeunit 67501 TTTMGTOWSInformation
         exit(locrrTable.Count());
     end;
 
+    var
+        textSalesOrderFilter: Label 'SORTING(Field1,Field3) WHERE(Field1=1(1)';
 }
